@@ -12,3 +12,16 @@ The idea of our project is to create an application that manages bookings for ha
 In this project we would like to create a booking management system for hairdressers and beauticians. On the client side, both the possibility of booking an appointment must be guaranteed, but also the possibility of choosing the hairdresser / beautician in a variable list based on geolocation. It will be possible to choose the service directly, already characterized by a duration. Furthermore, compared to the existing systems, the possibility to modify and cancel appointments will be guaranteed.
 Customers will also receive a notification on their smartphone
 Professionals will be provided with a booking management system, which can always be consulted and modified.
+
+## Tools and Techniques
+Ionic4 and Angular9.
+
+## Expected Outcomes
+A web app used by clients to find the desired hairdresser / beautician and to book appointements. 
+
+The web app is used by the hairdressers/beauticians to easily manage a calendar of bookings.
+
+## Project Documents
+
+## Bibliografy
+[1]https://github.com/mattlewis92/angular-calendar
