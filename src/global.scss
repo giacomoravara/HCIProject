@@ -1,0 +1,234 @@
+
+
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+
+ion-content{
+  font-family: Poppins, sans-serif;
+    --ion-background-color:#f8bbd0;
+}
+ion-header{
+  font-family: Poppins, sans-serif;
+}
+
+ion-item{ --border-color: #ad1457;
+--background: #f8bbd0 }
+
+
+.cal-week-view .cal-all-day-events{
+  display: none !important;
+}
+
+.cal-month-view .cal-day-number {
+  font-size: 1.2em;
+  font-weight: 400;
+  opacity: 1.0 !important;
+  //opacity: 0.75 !important;
+  margin-top: 15px;
+  margin-right: 15px;
+  //float: left !important; 
+  margin-bottom: 10px;
+}
+
+.cal-month-view .cal-day-cell{
+  min-height: 10px !important;
+}
+
+.cal-month-view .cal-cell{
+  min-height: 10px !important;
+}
+
+.cal-month-view .cal-cell-top {
+  min-height: 10px !important;
+  flex: 1;
+}
+
+.cal-month-view .cal-day-cell.cal-today .cal-day-number {
+  font-size: 1.3em !important;
+}
+
+.cal-month-view .cal-day-cell.cal-today  {
+  background-color: #e35183 !important;
+}
+
+.cal-week-view .cal-current-time-marker{
+  display: none;
+}
+
+.cal-month-view .cal-day-cell.cal-in-month.cal-has-events{
+  background-color: rgb(251, 167, 152) !important;
+}
+
+.cal-month-view .cal-event{
+  display: none;
+  
+}
+
+.cal-month-view .cal-day-badge{
+  //display: none;
+  margin-top: 0px !important;
+  margin-left: 0px !important;
+
+}
+
+.cal-month-view .cal-day-cell.cal-out-month .cal-day-number {
+  opacity: 0.3 !important;
+}
+
+.cal-day-selected, .cal-day-selected:hover{
+  background-color: #e35183;
+}
+
+.cal-time{
+  color: black;
+}
+
+.cal-week-view {
+
+  .cal-hour-segment.cal-after-hour-start .cal-time {
+      display: block;
+  }
+}
+.li-ionic4-datePicker {
+  .modal-wrapper {
+      height: 81%;
+      width: 100%;
+      --ion-color-primary: #ad1457;
+      ; // This Variable used for the change of colour ion-datepicker only.
+      --ion-color-primary-tint: #e35183  ; // This Variable changes the tint colour of background when click button.
+      ion-button {
+           --ion-color-primary:   #e35183 ;
+           // This Variable used for the change colour of buttons only.
+          // --ion-color-primary-tint: lightgreen; // This Variable changes the tint color of background when click buttons.
+          // --border-radious: 0px; // This Variable changes the border radious of buttons.
+          // button customization css write here...
+      }
+  }
+}
+
+
+.component-modal{
+      width: 100%;
+      ion-header{
+        font-size: 18px;
+      }
+      ion-item{
+        font-size: 15px;
+      }
+      --ion-color-primary: #ad1457;
+      ; // This Variable used for the change of colour ion-datepicker only.
+      --ion-color-primary-tint: #e35183 ; // This Variable changes the tint colour of background when click button.
+      ion-button {
+           --ion-color-primary: #e35183;
+           // This Variable used for the change colour of buttons only.
+          // --ion-color-primary-tint: lightgreen; // This Variable changes the tint color of background when click buttons.
+          // --border-radious: 0px; // This Variable changes the border radious of buttons.
+          // button customization css write here...
+      }
+  }
+
+  
+
+.event-color span{
+  color: white !important;
+}
+
+:root {
+  --ion-color-new: #69bb7b;
+  --ion-color-new-rgb: 105,187,123;
+  --ion-color-new-contrast: #ffffff;
+  --ion-color-new-contrast-rgb: 255,255,255;
+  --ion-color-new-shade: #5ca56c;
+  --ion-color-new-tint: #78c288;
+  --ion-font-family: Poppins, sans-serif;
+
+}
+.ion-color-new {
+  --ion-color-base: var(--ion-color-new);
+  --ion-color-base-rgb: var(--ion-color-new-rgb);
+  --ion-color-contrast: var(--ion-color-new-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-new-contrast-rgb);
+  --ion-color-shade: var(--ion-color-new-shade);
+  --ion-color-tint: var(--ion-color-new-tint);
+}
+
+:root {
+  --ion-color-secondary: #e65100;
+  --ion-color-secondary-rgb: 0,102,0;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-shade: #f36f28  ;
+  --ion-color-secondary-tint: #ffb74d;
+  --ion-font-family: Poppins, sans-serif;
+
+}
+
+
+:root {
+  --ion-color-favorite: #ad1457;
+  --ion-color-favorite-rgb: 175,20,17;
+  --ion-color-favorite-contrast: #ffffff;
+  --ion-color-favorite-contrast-rgb: 255,255,255;
+  --ion-color-favorite-shade: #e35183;
+  --ion-color-favorite-tint: #ffffff ;
+}
+
+.ion-color-favorite {
+  --ion-color-base: var(--ion-color-favorite);
+  --ion-color-base-rgb: var(--ion-color-favorite-rgb);
+  --ion-color-contrast: var(--ion-color-favorite-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-favorite-contrast-rgb);
+  --ion-color-shade: var(--ion-color-favorite-shade);
+  --ion-color-tint: var(--ion-color-favorite-tint);
+}
+
+:root {
+  --ion-color-favorite-secondary: #f8bbd0;
+  --ion-color-favorite-secondary-rgb: 248,187,208;
+  --ion-color-favorite-secondary-contrast: #000000;
+  --ion-color-favorite-secondary-contrast-rgb: 0,0,0;
+  --ion-color-favorite-secondary-shade: #c48b9f;
+  --ion-color-favorite-secondary-tint: #c48b9f;
+}
+
+.ion-color-favorite-secondary {
+  --ion-color-base: var(--ion-color-favorite-secondary);
+  --ion-color-base-rgb: var(--ion-color-favorite-secondary-rgb);
+  --ion-color-contrast: var(--ion-color-favorite-secondary-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-favorite-secondary-contrast-rgb);
+  --ion-color-shade: var(--ion-color-favorite-secondary-shade);
+  --ion-color-tint: var(--ion-color-favorite-secondary-tint);
+}
+
+
+.btn-dark{
+  background-color: #ad1457;
+  color: white;
+  border-color: #ad1457;
+  opacity: 1;
+}
