@@ -1,0 +1,100 @@
+
+<ion-header>
+  <nav class="navbar navbar-primary justify-content-between">
+  <ion-title>{{professional.name}}</ion-title>
+    <button type="button" class="btn btn-dark ml-auto" (click)="signOut()">Logout</button>
+</nav>
+</ion-header>
+
+<ion-content>
+ 
+      <ion-segment>
+        <ion-segment-button
+          (click)="setView(CalendarView.Month)"
+          [class.active]="view === CalendarView.Month">
+      <ion-label>Mese</ion-label>
+        </ion-segment-button>
+        <ion-segment-button
+          (click)="setView(CalendarView.Week)"
+          [class.active]="view === CalendarView.Week">
+      <ion-label> Settimana</ion-label>
+        </ion-segment-button>
+        <ion-segment-button
+          (click)="setView(CalendarView.Day)"
+          [class.active]="view === CalendarView.Day">
+          <ion-label>Giorno</ion-label>
+      </ion-segment-button>
+      </ion-segment>
+    <ion-row>
+      <ion-col size="2" class="ion-text-center">
+        <ion-button
+        fill="dark"
+          mwlCalendarPreviousView
+          [view]="view"
+          [(viewDate)]="viewDate"
+          (viewDateChange)="closeOpenMonthViewDay()" class="text-center">
+          <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-col>
+        <ion-col size="8" class="ion-text-center">
+          <h2>{{ viewDate | calendarDate:(view + 'ViewTitle'):'it' }}</h2>
+        </ion-col>
+        <ion-col size="2" class="ion-text-center">
+          <ion-button
+          fill="dark"
+            mwlCalendarNextView
+            [view]="view"
+            [(viewDate)]="viewDate"
+            (viewDateChange)="closeOpenMonthViewDay()"  class="text-center">
+          <ion-icon name="arrow-forward" slot="icon-only"></ion-icon>
+          
+          </ion-button>
+        </ion-col>
+    </ion-row>
+  <div [ngSwitch]="view">
+    <mwl-calendar-month-view
+      *ngSwitchCase="CalendarView.Month"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      [activeDayIsOpen]="activeDayIsOpen"
+      (dayClicked)="dayClicked($event.day)"
+      
+      ></mwl-calendar-month-view>
+    <mwl-calendar-week-view
+      *ngSwitchCase="CalendarView.Week"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      [dayStartHour]="dayStartHour"
+      [dayEndHour]="dayEndHour"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      [hourSegments]="2"
+      [excludeDays]="excludeDays"
+      (hourSegmentClicked)="hourSegmentClicked($event.date)"
+      (beforeViewRender)="beforeWeekOrDayViewRender($event)"
+      ></mwl-calendar-week-view>        
+      <mwl-calendar-day-view
+      *ngSwitchCase="CalendarView.Day"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      [dayStartHour]="dayStartHour"
+      [dayEndHour]="dayEndHour"
+      [hourSegments]="2"
+      (hourSegmentClicked)="hourSegmentClicked($event.date)"
+      (beforeViewRender)="beforeWeekOrDayViewRender($event)"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      ></mwl-calendar-day-view>       
+  </div>
+
+
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="addModalEvent()">
+    <ion-icon name="add-outline"></ion-icon>
+  </ion-fab-button>
+
+
+</ion-fab>
+</ion-content>

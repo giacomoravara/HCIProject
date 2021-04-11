@@ -1,0 +1,37 @@
+ion-segment-button {
+    --color-checked: black;
+    --background-checked: #f8bbd0;
+    --color: white;
+    --color-hover: #e45392;
+}
+
+h2 {
+    font-size:  23px;
+    margin-top: 10px;
+}
+
+ion-col.ion-text-center.md.hydrated {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+ion-segment{
+    background: #ad1457;
+    color: white;
+    font-family: Poppins, sans-serif;
+   
+}
+
+ion-content{
+    font-family: Poppins, sans-serif;
+}
+
+ion-fab-button{
+    --background: #ad1457;
+    --background-activated: #e45392;
+    --color-activated: black;
+}
+
+
