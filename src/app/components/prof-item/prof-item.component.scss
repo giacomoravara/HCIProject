@@ -1,0 +1,32 @@
+.card{
+    font-size: 14px;
+}
+
+.card-header{
+    background-color: #f8bbd0;
+}
+
+.card-body{
+    font-size: 14px;
+    padding-left: 7px;
+    padding-right: 7px;
+
+}
+
+ion-label{
+    font-size: 11px !important;
+}
+
+
+p{
+    color: black;
+    font-size: 15px;
+    & a{
+      color: black;
+      font-size: 15px;
+    }
+  }
+
+  .location{
+    font-size: 13px;
+  }

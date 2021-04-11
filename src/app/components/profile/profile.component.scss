@@ -1,0 +1,39 @@
+.swiper-slide img {
+    height: 20%;
+    pointer-events: none;
+}
+.card-body{
+    max-height: 80%;
+}
+
+.segmentoBottone{
+    color: black;
+}
+
+.freccia{
+    color: black;
+}
+
+.list-services{
+    max-height: 250px;
+    overflow: scroll;
+}
+
+.calendardays{
+    max-height: 100%;
+    overflow: scroll;
+  }
+
+  ion-label{
+      font-size: 14px !important;
+  }
+
+  .buttons{
+    background-color: #f8bbd0;
+  }
+
+
+  .bi-star-fill{
+    fill: rgb(255, 187, 0) !important;
+    color:rgb(255, 187, 0);
+}

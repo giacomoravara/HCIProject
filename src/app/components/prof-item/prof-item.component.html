@@ -1,0 +1,76 @@
+  <!-- <div class="card m-1 rounded">
+    <div class="card-header p-1 d-flex justify-content-between">
+  <ion-chip>
+    <ion-avatar>
+      <img src="../../assets/img/saloon_1.jpg">
+    </ion-avatar>
+    <ion-label>{{professional.name}}</ion-label>
+  </ion-chip>
+  <button type="button" class="btn btn-dark btn-sm rounded-pill" (click)="openPrenotazione($event)" *ngIf="service">Prenota</button>
+  <button type="button" class="btn btn-success btn-sm rounded-pill" (click)="openPrenotazione($event)" *ngIf="!service">Prenota</button>
+
+  <button type="button" class="btn btn-danger btn-sm rounded-pill" (click)="remove($event)" *ngIf="!service">Rimuovi</button>
+
+</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-7">
+  <ion-chip>
+    <a href="tel:{{professional.phone}}">
+    <ion-icon name="call-outline"></ion-icon>
+    <ion-label>{{professional.phone}}</ion-label></a>
+  </ion-chip>
+</div>
+<div class="col-5 " *ngIf="service">
+ <ion-label> {{service.name}}: {{price | currency: 'EUR':'symbol':undefined:'it'}}</ion-label>
+</div>
+
+    </div>
+  <div *ngIf="service" class="row d-flex justify-content-center">
+
+  <ion-chip>
+  <ion-icon name="map-outline"></ion-icon>
+  <ion-label class="sm-text"> {{professional.location}}</ion-label>
+  </ion-chip>
+</div>
+<div *ngIf="!service" class="row d-flex justify-content-start">
+  <ion-chip>
+    <ion-icon name="map-outline"></ion-icon>
+    <ion-label class="sm-text"> {{professional.location}}</ion-label>
+    </ion-chip>
+</div>
+</div> -->
+
+<ion-item>
+  <ion-thumbnail slot="start">
+    <img src="{{professional.images[0]}}">
+    </ion-thumbnail>
+    <ion-buttons class="d-block"slot="end">
+          <!-- <button type="button" class="btn btn-dark btn-sm rounded-pill" (click)="openPrenotazione($event)">Prenota</button> -->
+
+    <button type="button" class="btn btn-dark btn-sm rounded-pill" (click)="openPrenotazione($event)" *ngIf="service">Visualizza</button>
+       <!-- <button type="button" class="btn btn-success btn-sm rounded-pill" (click)="openPrenotazione($event)" *ngIf="!service">Prenota</button>
+  
+    <button type="button" class="btn btn-danger btn-sm rounded-pill" (click)="remove($event)" *ngIf="!service">Rimuovi</button> -->
+</ion-buttons>  
+  <ion-label>
+    <h3><b>{{professional.name}}</b></h3> 
+    <ion-chip *ngIf="service">
+      <p >
+        {{price | currency: 'EUR':'symbol':undefined:'it'}}
+        </p>
+      </ion-chip> 
+   
+<p>      <a href="tel:{{professional.phone}}">
+      <ion-icon name="call-outline"></ion-icon>
+     {{professional.phone}}</a></p>
+  
+    <p *ngIf="service"><ion-icon name="map-outline"></ion-icon>
+    {{professional.distance | distance}}</p> 
+
+    <p *ngIf="!service"><ion-icon name="map-outline"></ion-icon>
+      {{professional.location}}</p> 
+  </ion-label>
+
+
+</ion-item> 

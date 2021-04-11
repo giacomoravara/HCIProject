@@ -1,0 +1,64 @@
+<ion-header>
+
+  <ion-toolbar color="favorite">
+      <!-- color="light" (click)="dismissModal()" -->
+
+    <ion-title *ngIf="!selectedAppo">Nuovo appuntamento</ion-title>
+    <ion-title *ngIf="selectedAppo">Modifica</ion-title>
+    <ion-buttons slot = "start">
+      <ion-button (click)="dismissModal()"><ion-icon name="arrow-back" slot="icon-only"></ion-icon></ion-button>  
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" id="main">
+  <form [formGroup]="formGroup">
+<ion-item>
+  <ion-label>Nome</ion-label>
+  <ion-input type="text" formControlName="firstName" placeholder="Inserisci il nome"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Cognome</ion-label>
+   <ion-input type="text" formControlName="lastName" placeholder="Inserisci il cognome"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Email</ion-label>
+   <ion-input type="email" formControlName="mail" placeholder="Inserisci la mail"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Numero di telefono</ion-label><ion-icon>phone</ion-icon>
+   <ion-input type="text" formControlName="phone" placeholder="333..."></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Orario Appuntamento</ion-label>
+  <ion-datetime class="border border-dark p-1" displayFormat="D MMM YYYY H:mm" [(ngModel)]="selectedDate" [ngModelOptions]="{standalone: true}"
+   [min]="minDate" [hourValues]="hourValues" ></ion-datetime>
+</ion-item>
+<ion-item>
+  <ion-label>Note</ion-label>
+   <ion-textarea rows="1" type="text" formControlName="notes" placeholder="Inserisci note eventuali"></ion-textarea>
+</ion-item>
+</form>
+
+<ion-list class="list-services">
+  <ion-list-header>
+  Seleziona servizi
+  </ion-list-header>
+  <div class="services-container">
+  <ion-item *ngFor="let serv of professional.services; let i = index">
+    <ion-label><p style="color:black">{{serv.name}}</p></ion-label>
+    <ion-label *ngIf="!adminPage" style="text-align: center;"><p style="color:black">{{ serv.price | currency: 'EUR':'symbol':undefined:'it' }}</p></ion-label>
+    <ion-label *ngIf="!adminPage" style="text-align: center;"><p style="color:black">{{ serv.duration}} min</p></ion-label>
+    <ion-toggle style="float: right;" [(ngModel)]="servState[i]" (ionChange)="isSelected($event, serv)"></ion-toggle> 
+  </ion-item>
+  </div>
+<!-- <ion-select type="Service-Type" formControlName="services">
+  <ion-select-option>
+    {{serv.start}}
+  </ion-select-option> -->
+</ion-list>
+<div class="p-2 d-flex justify-content-end">
+<ion-button *ngIf="selectedAppo" shape="round" color="success" (click)="try()">Modifica</ion-button>
+<ion-button *ngIf="selectedAppo" shape="round" color="danger" (click)="deleteEvent()">Elimina</ion-button>
+<ion-button *ngIf="!selectedAppo" shape="round" color="success" (click)="try()" [disabled]="!(selectedServ.length>0 && formGroup.valid)">Inserisci</ion-button>
+</div>
+</ion-content>

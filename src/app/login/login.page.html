@@ -1,0 +1,54 @@
+
+<ion-content [fullscreen]=true data-aos="zoom-in">
+  <div class="login-section-wrapper" data-aos="zoom-in">
+  <div class="brand-wrapper d-flex justify-content-center" data-aos="fade-left">
+    <img src="../../assets/logo2.png">
+
+  </div>
+  <div class="login-wrapper my-4">
+    <!-- <h3 class="login-subtitle">Log in</h3> -->
+    <form [formGroup]="loginForm">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="email" [(ngModel)]="user.email" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+      </div>
+      <div class="form-group mb-4">
+        <label for="password">Password</label>
+        
+        <input type="password" [(ngModel)]="user.pw" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+      </div>
+      <button [disabled]="loading" name="login" id="login" class="btn btn-dark btn-block login-btn" (click)="signIn()">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Login
+      </button>
+    </form>
+    <!-- <a href="#!" class="forgot-password-link">Forgot password?</a>
+    <p class="login-wrapper-footer-text">Don't have an account? <a href="#!" class="text-reset">Register here</a></p>
+    --></div> 
+    </div>
+  </ion-content>
+<!-- 
+
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Login</ion-title>
+      
+      </ion-toolbar>
+          </ion-header>
+          <ion-content padding>
+            <ion-item>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input type="email" placeholder="Email" [(ngModel)]="user.email">Email</ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="stacked">Password</ion-label>
+              <ion-input type="password" placeholder="Password" [(ngModel)]="user.pw">Email</ion-input>
+            </ion-item>
+      
+            <ion-button expand (click)="signIn()"></ion-button>
+          </ion-content>
+       -->

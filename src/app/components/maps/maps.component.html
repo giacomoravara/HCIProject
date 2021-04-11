@@ -1,0 +1,15 @@
+<ion-header>
+<ion-toolbar color="favorite-secondary">
+  <ion-buttons slot="start">
+       <ion-button (click)="goBackToServices()"><ion-icon name="arrow-back"></ion-icon></ion-button>
+        </ion-buttons>
+        <ion-title  class="content-title">Dove vorresti prenotare?</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <div>
+      <div class="p-3 d-flex justify-content-center">
+      <input #search id="pac-input" type="text" placeholder="Inserisci una località">
+      <button type="button" class="btn btn-large btn-light d-flex align-items-center p-2" (click)="getCurrentPosition()" ><ion-icon name="navigate"></ion-icon></button>
+    </div>
+
+</div>
